@@ -1,0 +1,6 @@
+{
+  "name": "BYD Technical & Training Institute",
+  "description": "Official website for BYD Technical & Training Institute (Chandkheda, Ahmedabad) - practical technical skills training in AC, Fridge, Washing Machine, RO, Geyser, House Wiring & PCB repairing with hostel facility and 100% job placement support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
