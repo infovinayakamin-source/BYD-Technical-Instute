@@ -95,22 +95,27 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenLeadsModal }) => {
             <ul className="space-y-2.5 text-xs text-blue-100 font-medium font-subheading">
               <li>
                 <a href="#about" className="hover:text-amber-300 transition-colors flex items-center gap-1">
-                  <span>›</span> <span>{lang === 'hi' ? 'संस्थान परिचय' : 'About Us'}</span>
+                  <span>›</span> <span>{lang === 'hi' ? 'संस्थान परिचय' : 'About BYD'}</span>
                 </a>
               </li>
               <li>
-                <a href="#facilities" className="hover:text-amber-300 transition-colors flex items-center gap-1">
-                  <span>›</span> <span>{lang === 'hi' ? 'विश्वस्तरीय सुविधाएं' : 'Facilities'}</span>
+                <a href="#courses" className="hover:text-amber-300 transition-colors flex items-center gap-1">
+                  <span>›</span> <span>{lang === 'hi' ? 'प्रैक्टिकल कोर्सेज' : 'Courses'}</span>
                 </a>
               </li>
               <li>
-                <a href="#placements" className="hover:text-amber-300 transition-colors flex items-center gap-1">
-                  <span>›</span> <span>{lang === 'hi' ? 'प्लेसमेंट सहायता' : 'Placements'}</span>
+                <a href="#reels" className="hover:text-amber-300 transition-colors flex items-center gap-1 text-pink-300 font-bold">
+                  <span>›</span> <span>{lang === 'hi' ? 'इंस्टाग्राम रील्स' : 'Instagram Reels'}</span>
                 </a>
               </li>
               <li>
                 <a href="#gallery" className="hover:text-amber-300 transition-colors flex items-center gap-1">
                   <span>›</span> <span>{lang === 'hi' ? 'लैब गैलरी' : 'Lab Gallery'}</span>
+                </a>
+              </li>
+              <li>
+                <a href="#placements" className="hover:text-amber-300 transition-colors flex items-center gap-1">
+                  <span>›</span> <span>{lang === 'hi' ? 'प्लेसमेंट सहायता' : 'Placements'}</span>
                 </a>
               </li>
               <li>

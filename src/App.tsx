@@ -7,11 +7,10 @@ import React, { useState, useEffect } from 'react';
 import { Language, FontTheme } from './types';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { WelcomeSection } from './components/WelcomeSection';
-import { FacilitiesSection } from './components/FacilitiesSection';
-import { SocialHub } from './components/SocialHub';
+import { InstagramHighlights } from './components/InstagramHighlights';
+import { InstagramReelsSection } from './components/InstagramReelsSection';
 import { CourseCatalog } from './components/CourseCatalog';
-import { EarningCalculator } from './components/EarningCalculator';
+import { WelcomeSection } from './components/WelcomeSection';
 import { PlacementSection } from './components/PlacementSection';
 import { LabGallery } from './components/LabGallery';
 import { Testimonials } from './components/Testimonials';
@@ -98,47 +97,44 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* 1. Hero Section (AIT Editorial Hero: "Ignite Innovation Together" / "तकनीकी शिक्षा से आत्मनिर्भर भविष्य", 3 Action Buttons) */}
+        {/* 1. Hero Section (BYD "Because Learning Has No Borders" with Instagram Profile Card) */}
         <Hero lang={lang} />
 
-        {/* 2. Welcome Section (AIT Exact Layout: Since 2018, Story, 4 Metric Stats, Vision & Mission Cards) */}
-        <WelcomeSection lang={lang} />
+        {/* 2. Instagram Story Highlights Bar (Live AC, PCB, Fridge, Washing Machine, Certificates) */}
+        <InstagramHighlights lang={lang} />
 
-        {/* 3. World-Class Facilities Section (AIT Exact 6-Card Numbered Layout: Advanced Labs, Testing Bays, Faculty, Placement, Smart Class, Toolkits) */}
-        <FacilitiesSection lang={lang} />
-
-        {/* 4. Official Verified Channels (Facebook, Instagram & Google Business) */}
-        <SocialHub lang={lang} />
-
-        {/* 5. 100% Practical Course Catalog */}
+        {/* 3. 100% Practical Vocational Course Catalog */}
         <CourseCatalog
           lang={lang}
           onSelectCourseForAdmission={handleSelectCourseForAdmission}
         />
 
-        {/* 6. Interactive ROI & Career Earning Calculator */}
-        <EarningCalculator lang={lang} />
+        {/* 4. Official Instagram Practical Reels Showcase (@byd_technical_institute) */}
+        <InstagramReelsSection lang={lang} />
 
-        {/* 8. 100% Placement & Business Ecosystem */}
-        <PlacementSection lang={lang} />
-
-        {/* 9. Campus & Practical Lab Photo Gallery */}
+        {/* 5. Real Campus & Practical Lab Workstation Gallery */}
         <LabGallery lang={lang} />
 
-        {/* 10. Student Voices & Success Stories (AIT Exact Testimonial Spotlight Card) */}
+        {/* 6. About BYD Institute (Story, 4 Animated Stats, Vision & Mission) */}
+        <WelcomeSection lang={lang} />
+
+        {/* 7. 100% Placement & Business Setup Ecosystem */}
+        <PlacementSection lang={lang} />
+
+        {/* 8. Student Voices & Success Stories (Alumni Reviews) */}
         <Testimonials lang={lang} />
 
-        {/* 11. Admission / Free Demo Class Registration Form */}
+        {/* 9. Free Demo Class & Admission Registration Form */}
         <AdmissionForm
           lang={lang}
           preSelectedCourseId={preSelectedCourseId}
           onLeadAdded={refreshLeadCount}
         />
 
-        {/* 12. Chandkheda Campus Location, Directions & Timings */}
+        {/* 10. Chandkheda Campus Location, Directions & Operating Hours */}
         <ContactLocation lang={lang} />
 
-        {/* 13. Frequently Asked Questions */}
+        {/* 11. Frequently Asked Questions */}
         <FaqSection lang={lang} />
       </main>
 

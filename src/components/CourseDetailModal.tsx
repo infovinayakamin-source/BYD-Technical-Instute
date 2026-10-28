@@ -38,17 +38,11 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
       >
         {/* If course has uploaded assets, show 100% opacity banner */}
         {course.image && course.image.startsWith('/assets/') && (
-          <div className={`relative w-full h-48 sm:h-64 flex items-center justify-center border-b border-slate-700 overflow-hidden ${
-            course.id === 'ac-inverter-master' ? 'bg-gradient-to-b from-white via-slate-50 to-slate-100 p-3' : 'bg-slate-950'
-          }`}>
+          <div className="relative w-full h-48 sm:h-64 flex items-center justify-center border-b border-slate-700 overflow-hidden bg-slate-950">
             <img
               src={course.image}
               alt={course.title[lang]}
-              className={`h-full w-full opacity-100 ${
-                course.id === 'ac-inverter-master'
-                  ? 'object-contain object-center'
-                  : 'object-cover object-center'
-              }`}
+              className="h-full w-full opacity-100 object-cover object-center"
               style={{ opacity: 1 }}
             />
             <button

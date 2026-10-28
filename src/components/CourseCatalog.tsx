@@ -115,21 +115,15 @@ export const CourseCatalog: React.FC<CourseCatalogProps> = ({
               key={course.id}
               className="bg-slate-900/90 rounded-2xl border border-slate-800 hover:border-blue-500/40 shadow-xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group"
             >
-              {/* Card Header: For courses with uploaded assets (AC & Refrigerator), display the image at 100% opacity */}
+              {/* Card Header: For courses with uploaded institute assets, display the image at 100% opacity */}
               {course.image && course.image.startsWith('/assets/') ? (
                 <div className="relative bg-slate-900 border-b border-slate-700 overflow-hidden flex flex-col justify-between">
                   {/* Course Image with 100% opacity */}
-                  <div className={`relative w-full h-56 flex items-center justify-center overflow-hidden group ${
-                    course.id === 'ac-inverter-master' ? 'bg-gradient-to-b from-white via-slate-50 to-slate-100 p-2.5' : 'bg-slate-950'
-                  }`}>
+                  <div className="relative w-full h-56 flex items-center justify-center overflow-hidden group bg-slate-950">
                     <img
                       src={course.image}
                       alt={course.title[lang]}
-                      className={`w-full h-full opacity-100 select-none group-hover:scale-105 transition-transform duration-300 ${
-                        course.id === 'ac-inverter-master'
-                          ? 'object-contain object-center'
-                          : 'object-cover object-center'
-                      }`}
+                      className="w-full h-full opacity-100 select-none object-cover object-center group-hover:scale-105 transition-transform duration-300"
                       style={{ opacity: 1 }}
                     />
                     {/* Top Row Badges */}

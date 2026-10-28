@@ -45,19 +45,18 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { href: '#home', en: 'HOME', hi: 'होम' },
-    { href: '#about', en: 'ABOUT US', hi: 'हमारे बारे में' },
-    { href: '#courses', en: 'COURSES', hi: 'कोर्सेज' },
-    { href: '#facilities', en: 'FACILITIES', hi: 'सुविधाएं' },
-    { href: '#placements', en: 'PLACEMENTS', hi: 'प्लेसमेंट' },
+    { href: '#courses', en: 'PRACTICAL COURSES', hi: 'कोर्सेज' },
+    { href: '#reels', en: 'INSTAGRAM REELS', hi: 'इंस्टाग्राम रील्स' },
     { href: '#gallery', en: 'LAB GALLERY', hi: 'प्रैक्टिकल लैब' },
+    { href: '#about', en: 'ABOUT BYD', hi: 'संस्थान परिचय' },
     { href: '#reviews', en: 'REVIEWS', hi: 'समीक्षाएं' },
     { href: '#contact', en: 'CONTACT', hi: 'संपर्क' },
   ];
 
   return (
     <header className="sticky top-0 z-40 w-full shadow-lg">
-      {/* Upper Header Tier (Exact AIT Deep Navy Blue Header) */}
-      <div className="bg-[#0b2464] text-white border-b border-blue-900/80 px-4 sm:px-6 lg:px-8 py-3">
+      {/* Upper Header Tier */}
+      <div className="bg-[#081329] text-white border-b border-slate-800 px-4 sm:px-6 lg:px-8 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
           {/* Left: Official Institute Logo + Name + Accreditations */}
@@ -74,25 +73,28 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="text-base sm:text-lg lg:text-xl font-black tracking-tight text-white group-hover:text-amber-300 transition-colors font-heading leading-tight">
                 {lang === 'hi' ? 'बी.वाई.डी. टेक्निकल इंस्टीट्यूट' : 'BYD Technical & Training Institute'}
               </span>
-              <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-blue-200 tracking-wider uppercase font-subheading mt-0.5">
-                <span>EST. 2018</span>
+              <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-slate-300 tracking-wider uppercase font-subheading mt-0.5">
+                <span className="text-[#f05a28] font-black">BUILD YOUR DREAMS</span>
                 <span>•</span>
-                <span className="text-amber-400">ISO 9001:2015 CERTIFIED</span>
+                <span className="text-pink-400 font-extrabold">@byd_technical_institute</span>
                 <span className="hidden md:inline">•</span>
-                <span className="hidden md:inline text-slate-300">GOVT. MSME REGISTERED</span>
-                <span className="hidden lg:inline">•</span>
-                <span className="hidden lg:inline text-emerald-300">CHANDKHEDA, AHMEDABAD</span>
+                <span className="hidden md:inline text-emerald-300">CHANDKHEDA, AHMEDABAD</span>
               </div>
             </div>
           </a>
 
-          {/* Right: Top Action Badges (Exact AIT Style) */}
+          {/* Right: Top Action Badges */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* NBA / ISO Accredited Pill (Exact AIT Orange/Amber Style) */}
-            <div className="hidden md:inline-flex items-center gap-1 px-3 py-1 rounded-md bg-[#ea580c] hover:bg-[#c2410c] text-white text-[11px] font-extrabold uppercase tracking-wider shadow-xs transition-colors">
-              <Award className="w-3.5 h-3.5" />
-              <span>{lang === 'hi' ? 'ISO प्रमाणित' : 'ISO Accredited'}</span>
-            </div>
+            {/* Instagram Handle Pill */}
+            <a
+              href={INSTITUTE_INFO.socialLinks.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white text-[11px] font-extrabold shadow-sm transition-all"
+            >
+              <Instagram className="w-3.5 h-3.5" />
+              <span>Follow on Instagram</span>
+            </a>
 
             {/* Grievance / WhatsApp Help Pill */}
             <a

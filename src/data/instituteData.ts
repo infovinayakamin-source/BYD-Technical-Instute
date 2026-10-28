@@ -135,7 +135,7 @@ export const COURSES: Course[] = [
       en: ['Digital Manifold Gauge', 'Micron Vacuum Pump', 'Flaring & Swaging Kit', 'Brazing Torch', 'Digital Clamp Meter', 'Leak Detector Spray', 'High Pressure Jet Pump'],
       hi: ['डिजिटल मैनिफोल्ड गेज', 'माइक्रोन वैक्यूम पंप', 'फ्लेयरिंग और स्वाइजिंग टूलकिट', 'गैस ब्रेजिंग टॉर्च', 'डिजिटल क्लैम्प मीटर', 'लीक डिटेक्टर', 'हाई प्रेशर जेट पंप'],
     },
-    image: '/assets/aistudio/image_e10e3466.png',
+    image: '/assets/aistudio/image_8b60c2a1.png',
   },
   {
     id: 'refrigerator-deep-freezer',
@@ -215,7 +215,7 @@ export const COURSES: Course[] = [
       en: ['Pinching Pliers', 'Digital Weighing Scale', 'Capillary Cutter', 'Safety Charging Valve', 'Digital Multimeter', 'Gas Can Tap Valve'],
       hi: ['पिंचिंग प्लायर', 'डिजिटल वेट स्केल (वजन कांटा)', 'कैपिलरी कटर', 'सेफ्टी चार्जिंग वाल्व', 'डिजिटल मल्टीमीटर', 'कैन वॉल्व'],
     },
-    image: '/assets/aistudio/image_222fe3ed.png',
+    image: '/assets/aistudio/image_01394ba0.png',
   },
   {
     id: 'washing-machine-specialist',
@@ -441,7 +441,7 @@ export const COURSES: Course[] = [
       en: ['Digital Multimeter', 'Element Box Spanner', 'Descaling Pump', 'Gas Leak Detector', 'Water Pressure Tester'],
       hi: ['डिजिटल मल्टीमीटर', 'एलिमेंट बॉक्स स्पैनर', 'डीस्केलिंग पंप', 'गैस लीक डिटेक्टर', 'प्रेशर टेस्टर'],
     },
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/aistudio/image_5b50581e.png',
   },
   {
     id: 'pcb-circuit-inverter',
