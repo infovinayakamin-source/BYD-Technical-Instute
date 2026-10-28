@@ -112,7 +112,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
           <div className="pt-6 flex flex-wrap items-center gap-6 text-xs text-slate-300 font-medium">
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>{lang === 'hi' ? 'हॉस्टल व भोजन ₹4,999/माह' : 'Hostel & Food @ ₹4,999/mo'}</span>
+              <span>{lang === 'hi' ? 'मान्यता प्राप्त वोकेशनल सर्टिफिकेट' : 'Govt. Recognized Certification'}</span>
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-blue-400" />

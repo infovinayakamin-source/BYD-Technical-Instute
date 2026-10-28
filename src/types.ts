@@ -83,7 +83,7 @@ export interface AdmissionInquiry {
   courseId: string;
   courseName: string;
   city: string;
-  hostelRequired: boolean;
+  hostelRequired?: boolean;
   preferredBatch: string;
   createdAt: string;
   status: 'new' | 'contacted' | 'enrolled';
@@ -92,7 +92,7 @@ export interface AdmissionInquiry {
 export interface GalleryItem {
   id: string;
   title: { en: string; hi: string };
-  category: 'lab' | 'students' | 'hostel' | 'certificates';
+  category: 'lab' | 'students' | 'tools' | 'certificates';
   image: string;
   description: { en: string; hi: string };
 }

@@ -8,11 +8,9 @@ import {
   Phone,
   User,
   MapPin,
-  Home,
   Clock,
   CheckCircle2,
   MessageCircle,
-  FileText,
   ShieldCheck,
   Send
 } from 'lucide-react';
@@ -32,7 +30,6 @@ export const AdmissionForm: React.FC<AdmissionFormProps> = ({
   const [phone, setPhone] = useState('');
   const [city, setCity] = useState('');
   const [courseId, setCourseId] = useState(preSelectedCourseId || 'ac-inverter-master');
-  const [hostelRequired, setHostelRequired] = useState(false);
   const [preferredBatch, setPreferredBatch] = useState('morning');
   const [submitted, setSubmitted] = useState(false);
   const [submittedInquiry, setSubmittedInquiry] = useState<AdmissionInquiry | null>(null);
@@ -57,7 +54,6 @@ export const AdmissionForm: React.FC<AdmissionFormProps> = ({
       courseId,
       courseName: courseTitle,
       city: city.trim() || 'Ahmedabad/Outstation',
-      hostelRequired,
       preferredBatch,
       createdAt: new Date().toISOString(),
       status: 'new',
@@ -99,7 +95,6 @@ export const AdmissionForm: React.FC<AdmissionFormProps> = ({
           `📞 मोबाइल: ${submittedInquiry.phone}\n` +
           `📍 शहर/राज्य: ${submittedInquiry.city}\n` +
           `🛠️ कोर्स: ${submittedInquiry.courseName}\n` +
-          `🏠 हॉस्टल चाहिए?: ${submittedInquiry.hostelRequired ? 'हाँ (₹4,999/माह)' : 'नहीं'}\n` +
           `⏰ पसंदीदा बैच: ${submittedInquiry.preferredBatch}\n\n` +
           `कृपया मुझे डेमो क्लास का समय व फीस की जानकारी भेजें। धन्यवाद!`
         : `*New Demo Class & Admission Inquiry - BYD Institute*\n` +
@@ -107,7 +102,6 @@ export const AdmissionForm: React.FC<AdmissionFormProps> = ({
           `📞 Phone: ${submittedInquiry.phone}\n` +
           `📍 City/State: ${submittedInquiry.city}\n` +
           `🛠️ Course: ${submittedInquiry.courseName}\n` +
-          `🏠 Hostel Required?: ${submittedInquiry.hostelRequired ? 'Yes (₹4,999/mo)' : 'No'}\n` +
           `⏰ Preferred Batch: ${submittedInquiry.preferredBatch}\n\n` +
           `Please share admission dates, fee structure & demo class slot. Thank you!`;
 
@@ -138,9 +132,9 @@ export const AdmissionForm: React.FC<AdmissionFormProps> = ({
             </div>
 
             <div className="hidden sm:block shrink-0 bg-white/10 p-4 rounded-2xl backdrop-blur-sm text-center border border-white/20">
-              <span className="text-xs font-bold text-amber-300 block font-subheading">Hostel Seat</span>
-              <span className="text-xl font-black text-white font-heading">₹{INSTITUTE_INFO.hostelFeeMonthly}</span>
-              <span className="text-[10px] text-blue-200 block">per month (Food + Stay)</span>
+              <span className="text-xs font-bold text-amber-300 block font-subheading">{lang === 'hi' ? 'डेमो क्लास' : 'Demo Class'}</span>
+              <span className="text-xl font-black text-white font-heading">{lang === 'hi' ? '100% फ्री' : '100% Free'}</span>
+              <span className="text-[10px] text-blue-200 block">{lang === 'hi' ? 'लाइव प्रैक्टिकल' : 'Live Hands-On'}</span>
             </div>
           </div>
 
@@ -174,8 +168,8 @@ export const AdmissionForm: React.FC<AdmissionFormProps> = ({
                     <strong className="text-white">{lang === 'hi' ? 'चुना गया कोर्स:' : 'Course:'}</strong> {submittedInquiry?.courseName}
                   </p>
                   <p>
-                    <strong className="text-white">{lang === 'hi' ? 'हॉस्टल आवश्यकता:' : 'Hostel:'}</strong>{' '}
-                    {submittedInquiry?.hostelRequired ? (lang === 'hi' ? 'हाँ (₹4,999/माह)' : 'Yes (₹4,999/mo)') : (lang === 'hi' ? 'नहीं' : 'No')}
+                    <strong className="text-white">{lang === 'hi' ? 'बैच समय:' : 'Batch:'}</strong>{' '}
+                    <span className="capitalize">{submittedInquiry?.preferredBatch} Batch</span>
                   </p>
                 </div>
 
@@ -275,9 +269,8 @@ export const AdmissionForm: React.FC<AdmissionFormProps> = ({
                   </div>
                 </div>
 
-                {/* Batch and Hostel Options */}
+                {/* Preferred Batch Option */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                  {/* Preferred Batch */}
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2 flex items-center gap-1.5">
                       <Clock className="w-3.5 h-3.5 text-red-500" />
@@ -303,33 +296,17 @@ export const AdmissionForm: React.FC<AdmissionFormProps> = ({
                     </select>
                   </div>
 
-                  {/* Hostel Checkbox */}
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2 flex items-center gap-1.5">
-                      <Home className="w-3.5 h-3.5 text-red-500" />
-                      <span>{lang === 'hi' ? 'हॉस्टल सुविधा चाहिए?' : 'Hostel Facility Needed?'}</span>
+                      <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                      <span>{lang === 'hi' ? 'प्रशिक्षण का प्रकार' : 'Training Format'}</span>
                     </label>
-                    <div
-                      onClick={() => setHostelRequired(!hostelRequired)}
-                      className={`cursor-pointer flex items-center justify-between p-3 rounded-xl border transition-all ${
-                        hostelRequired
-                          ? 'bg-red-500/15 border-red-500 text-red-200'
-                          : 'bg-slate-950 border-slate-700 text-slate-400'
-                      }`}
-                    >
-                      <div className="flex items-center gap-2">
-                        <input
-                          type="checkbox"
-                          checked={hostelRequired}
-                          onChange={() => {}}
-                          className="accent-red-600 w-4 h-4 rounded cursor-pointer"
-                        />
-                        <span className="text-xs font-bold">
-                          {lang === 'hi' ? 'हाँ, हॉस्टल व भोजन चाहिए (₹4,999/माह)' : 'Yes, need Hostel & Food (₹4,999/mo)'}
-                        </span>
-                      </div>
-                      <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-bold">
-                        Food + Stay
+                    <div className="p-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-300 flex items-center justify-between text-xs">
+                      <span className="font-bold text-amber-300">
+                        {lang === 'hi' ? '100% लाइव प्रैक्टिकल वर्कशॉप' : '100% Live Practical Workshop'}
+                      </span>
+                      <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded border border-emerald-500/30">
+                        Chandkheda Lab
                       </span>
                     </div>
                   </div>

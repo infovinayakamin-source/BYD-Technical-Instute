@@ -212,8 +212,8 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({ lang }) => {
                     </div>
                     <span>
                       {lang === 'hi'
-                        ? 'बाहरी छात्रों के लिए उच्चस्तरीय हॉस्टल व शुद्ध भोजन सुविधा उपलब्ध कराना।'
-                        : 'Provide a safe, world-class hostel and mess environment where outstation students thrive.'}
+                        ? 'अत्याधुनिक डायग्नोस्टिक टूल्स एवं ऑसिलोस्कोप से सर्किट लेवल फॉल्ट सुधारना सिखाना।'
+                        : 'Equip every student with mastery over digital oscilloscopes, SMD rework, and precision diagnostic tools.'}
                     </span>
                   </li>
 

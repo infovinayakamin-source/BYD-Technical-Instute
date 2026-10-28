@@ -35,7 +35,7 @@ export const SocialHub: React.FC<SocialHubProps> = ({ lang }) => {
           <p className="mt-3 text-slate-300 text-sm sm:text-base">
             {lang === 'hi'
               ? 'हमारे डेली प्रैक्टिकल रील्स, वीडियो, छात्र समीक्षाएं और संस्थान की लाइव लोकेशन देखें।'
-              : 'Explore our daily practical training videos, student projects, hostel life, and verified Google reviews.'}
+              : 'Explore our daily practical training videos, student projects, campus workshops, and verified Google reviews.'}
           </p>
         </div>
 
@@ -117,8 +117,8 @@ export const SocialHub: React.FC<SocialHubProps> = ({ lang }) => {
 
               <p className="text-xs text-slate-300 mt-4 leading-relaxed">
                 {lang === 'hi'
-                  ? 'इंस्टाग्राम पर हमारे डेली प्रैक्टिकल वर्कशॉप रील्स, हॉस्टल फैसिलिटी (₹4,999/माह), और एसी-फ्रिज रिपेयरिंग के लाइव डेमो देखें।'
-                  : 'Watch our viral practical reels, student live troubleshooting, hostel facilities, and hands-on AC/fridge diploma demos.'}
+                  ? 'इंस्टाग्राम पर हमारे डेली प्रैक्टिकल वर्कशॉप रील्स, लाइव फॉल्ट ट्रबलशूटिंग, और एसी-फ्रिज रिपेयरिंग के लाइव डेमो देखें।'
+                  : 'Watch our viral practical reels, student live troubleshooting, and hands-on AC/fridge diploma demos.'}
               </p>
 
               <div className="mt-4 pt-4 border-t border-slate-800 flex items-center gap-3 text-xs text-slate-400">
@@ -128,8 +128,8 @@ export const SocialHub: React.FC<SocialHubProps> = ({ lang }) => {
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1">
-                  <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                  Hostel @ ₹4,999
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                  100% Hands-On
                 </span>
               </div>
             </div>

@@ -192,7 +192,7 @@ export const ContactLocation: React.FC<ContactLocationProps> = ({ lang }) => {
                     Shop No 1, Samanvay Glorious, Sneh Plaza Rd, opp. Kilo Kulture, near Bank of Baroda, Tragad, Chandkheda
                   </p>
                   <div className="mt-2 pt-2 border-t border-slate-800 flex items-center justify-between text-[10px] text-slate-400">
-                    <span>Hostel: On-campus</span>
+                    <span className="text-emerald-400 font-semibold">100% Practical Labs</span>
                     <a
                       href={INSTITUTE_INFO.socialLinks.googleBusiness}
                       target="_blank"

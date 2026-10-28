@@ -187,8 +187,8 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
         {/* Footer Actions */}
         <div className="p-4 bg-slate-950 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
           <div className="text-xs text-slate-400 text-center sm:text-left">
-            <span>{lang === 'hi' ? 'हॉस्टल उपलब्ध:' : 'Hostel Available:'}</span>{' '}
-            <strong className="text-white">₹{INSTITUTE_INFO.hostelFeeMonthly}/mo (भोजन सहित)</strong>
+            <span className="text-emerald-400 font-bold">✓ {lang === 'hi' ? '100% प्रैक्टिकल वर्कशॉप' : '100% Practical Training'}</span>{' '}
+            <span className="text-slate-300">• {lang === 'hi' ? 'लाइफटाइम बैकअप सपोर्ट' : 'Lifetime Support'}</span>
           </div>
 
           <div className="flex items-center gap-3 w-full sm:w-auto">

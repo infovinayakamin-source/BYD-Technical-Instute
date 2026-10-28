@@ -30,8 +30,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ lang }) => {
           </h2>
           <p className="mt-3 text-slate-300 text-sm sm:text-base">
             {lang === 'hi'
-              ? 'एडमिशन, हॉस्टल, प्रैक्टिकल ट्रेनिंग और नौकरी से जुड़े सभी सवालों के जवाब यहाँ पढ़ें।'
-              : 'Get complete clarity regarding admissions, hostel living, course eligibility, and placement.'}
+              ? 'एडमिशन, प्रैक्टिकल ट्रेनिंग, टूल्स और नौकरी से जुड़े सभी सवालों के जवाब यहाँ पढ़ें।'
+              : 'Get complete clarity regarding admissions, practical training, course eligibility, and placement.'}
           </p>
         </div>
 

@@ -27,7 +27,6 @@ export const INSTITUTE_INFO = {
   whatsappNumber: '917623062070',
   whatsappMessage: 'Hello BYD Technical Institute, I am interested in joining a practical technical training course. Please share admission details.',
   whatsappMessageHi: 'नमस्ते बीवाईडी टेक्निकल इंस्टीट्यूट, मुझे प्रैक्टिकल टेक्निकल ट्रेनिंग कोर्स में एडमिशन लेना है। कृपया कोर्स और फीस की जानकारी भेजें।',
-  hostelFeeMonthly: 4999,
   socialLinks: {
     facebook: 'https://www.facebook.com/profile.php?id=61594472231987',
     facebookHandle: 'BYD Technical Institute-Chandkheda',
@@ -658,42 +657,6 @@ export const COURSES: Course[] = [
   },
 ];
 
-export const HOSTEL_DETAILS = {
-  feeMonthly: 4999,
-  amenities: [
-    {
-      title: { en: '3 Hygienic Home-Style Meals', hi: '3 समय पौष्टिक शुद्ध भोजन (नाश्ता, दोपहर, रात)' },
-      desc: { en: 'Fresh, nutritious vegetarian breakfast, lunch, and dinner cooked daily.', hi: 'रोजाना ताजा, शुद्ध और स्वादिष्ट शाकाहारी खाना।' },
-      icon: 'Utensils',
-    },
-    {
-      title: { en: 'Comfortable Clean Bedding', hi: 'साफ-सुथरा बिस्तर और अलमारी' },
-      desc: { en: 'Individual bed, mattress, pillow, and personal storage locker for every student.', hi: 'हर छात्र के लिए अलग गद्दा, तकिया और सामान रखने की सुरक्षित अलमारी।' },
-      icon: 'Bed',
-    },
-    {
-      title: { en: 'High-Speed Wi-Fi Internet', hi: 'हाई-स्पीड फ्री वाई-फाई' },
-      desc: { en: '24/7 unlimited internet for downloading service manuals and watching tutorial videos.', hi: 'सर्विस मैनुअल डाउनलोड करने और वीडियो ट्यूटोरियल देखने के लिए फ्री इंटरनेट।' },
-      icon: 'Wifi',
-    },
-    {
-      title: { en: '24/7 Power & RO Drinking Water', hi: '24 घंटे बिजली बैकअप एवं शुद्ध RO पानी' },
-      desc: { en: 'Inverter power backup and cold/warm pure RO water dispenser on campus.', hi: 'इन्वर्टर बैकअप ताकि पढ़ाई में बाधा न आए और स्वच्छ ठंडा/गर्म पानी।' },
-      icon: 'Zap',
-    },
-    {
-      title: { en: 'Walking Distance to Institute', hi: 'संस्थान से केवल 2 मिनट की दूरी' },
-      desc: { en: 'Located right next to BYD Technical Institute in Chandkheda, saving daily travel costs.', hi: 'चांदखेड़ा संस्थान के ठीक पास स्थित, जिससे आने-जाने का किराया और समय बचता है।' },
-      icon: 'MapPin',
-    },
-    {
-      title: { en: 'Safe & Disciplined Environment', hi: 'सुरक्षित, शांत और अनुशासित माहौल' },
-      desc: { en: 'CCTV surveillance, student study groups, and hostel warden support.', hi: 'सीसीटीवी सुरक्षा, साथी छात्रों के साथ ग्रुप स्टडी और हॉस्टल वार्डन की देखरेख।' },
-      icon: 'ShieldCheck',
-    },
-  ],
-};
-
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't1',
@@ -718,8 +681,8 @@ export const TESTIMONIALS: Testimonial[] = [
     city: 'Surat (Now in UAE)',
     rating: 5,
     review: {
-      en: 'I stayed in the BYD hostel for 2 months. The hostel food and stay for ₹4,999 was wonderful. The practical training with R32 gas and VRV helped me clear the Dubai Gulf company technical interview in one attempt! Thank you BYD team.',
-      hi: 'मैं 2 महीने BYD के हॉस्टल में रहा। ₹4,999 में खाना और रहना बहुत बढ़िया था। R32 गैस और इन्वर्टर एसी की प्रैक्टिकल नॉलेज की वजह से मुझे दुबई की कंपनी में एक ही बार में अच्छी नौकरी मिल गई।',
+      en: 'The practical training with R32 gas and VRV at BYD helped me clear the Dubai Gulf company technical interview in one attempt! The live test benches and mentor guidance gave me solid hands-on confidence. Thank you BYD team.',
+      hi: 'R32 गैस और इन्वर्टर एसी की 100% प्रैक्टिकल नॉलेज की वजह से मुझे दुबई की कंपनी में एक ही बार में अच्छी नौकरी मिल गई। चांदखेड़ा में लाइव लैब्स और अनुभवी ट्रेनर्स का मार्गदर्शन बहुत शानदार रहा। थैंक यू BYD टीम।',
     },
     courseTaken: { en: 'Diploma in AC & Refrigeration', hi: 'डिप्लोमा इन एसी एवं रेफ्रिजरेशन' },
     currentStatus: { en: 'Working with Gulf HVAC Group', hi: 'दुबई में नौकरी: 3,200 AED वेतन' },
@@ -750,8 +713,8 @@ export const TESTIMONIALS: Testimonial[] = [
     city: 'Varanasi, UP (Came to Ahmedabad)',
     rating: 5,
     review: {
-      en: 'I traveled from UP specifically because of the practical reels on Instagram. Staying at the hostel was convenient. Today other mechanics bring damaged AC circuit boards to me for soldering and testing.',
-      hi: 'मैं इंस्टाग्राम पर रील्स देखकर खास तौर पर यूपी से अहमदाबाद आया था। हॉस्टल की सुविधा होने से कोई परेशानी नहीं हुई। आज बाकी एसी वाले मिस्त्री खराब कार्ड रिपेयर करवाने मेरे पास आते हैं।',
+      en: 'I traveled from UP specifically because of the practical reels on Instagram. Learning on live circuit boards, DSO testing, and SMD stations was exceptional. Today other mechanics bring damaged AC circuit boards to me for soldering and testing.',
+      hi: 'मैं इंस्टाग्राम पर रील्स देखकर खास तौर पर यूपी से अहमदाबाद आया था। लाइव सर्किट बोर्ड और डीएसओ टेस्टिंग पर सीखना बहुत शानदार रहा। आज बाकी एसी वाले मिस्त्री खराब कार्ड रिपेयर करवाने मेरे पास आते हैं।',
     },
     courseTaken: { en: 'Inverter PCB Board Repairing', hi: 'इन्वर्टर पीसीबी बोर्ड रिपेयरिंग' },
     currentStatus: { en: 'Card Repairing Lab in Varanasi', hi: 'खुद की पीसीबी लैब चला रहे हैं' },
@@ -792,10 +755,10 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'g5',
-    title: { en: 'Comfortable Student Hostel Rooms', hi: 'सुविधाजनक छात्र हॉस्टल कक्ष' },
-    category: 'hostel',
-    image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80',
-    description: { en: 'Hygienic rooms with bedding, storage, and clean washrooms.', hi: 'साफ-सुथरे कमरे, आरामदायक बिस्तर और शुद्ध वातावरण।' },
+    title: { en: 'Modern Toolkits & Diagnostic Gear', hi: 'आधुनिक टूल्स एवं डायग्नोस्टिक किट' },
+    category: 'tools',
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+    description: { en: 'Digital multimeters, manifold gauges, flaring tools, and vacuum testing stations.', hi: 'डिजिटल मल्टीमीटर, मैनिफोल्ड गेज, फ्लेयरिंग टूल्स और वैक्यूम टेस्टिंग स्टेशन।' },
   },
   {
     id: 'g6',
@@ -821,14 +784,14 @@ export const FAQS: FaqItem[] = [
   },
   {
     id: 'faq-2',
-    category: 'hostel',
+    category: 'course',
     question: {
-      en: 'Is hostel facility available for students coming from outside Ahmedabad?',
-      hi: 'क्या बाहर से आने वाले छात्रों के लिए हॉस्टल और खाने की सुविधा है?',
+      en: 'What kind of practical tools and machines will I learn to operate?',
+      hi: 'ट्रेनिंग में मुझे कौन-से टूल्स और मशीनों पर काम सीखने को मिलेगा?',
     },
     answer: {
-      en: 'Yes! We have an exclusive, secure hostel right next to the institute in Chandkheda at only ₹4,999/month. This includes 3 home-cooked meals daily, comfortable bed, high-speed Wi-Fi, RO water, and electricity backup.',
-      hi: 'हाँ! चांदखेड़ा में संस्थान के बिल्कुल पास हमारा सुरक्षित हॉस्टल है, जिसका शुल्क सिर्फ ₹4,999 प्रति महीना है। इसमें सुबह का नाश्ता, दोपहर व रात का खाना, साफ बिस्तर, वाई-फाई और 24 घंटे बिजली-पानी शामिल है।',
+      en: 'You will work hands-on with digital manifold gauges, micron vacuum pumps, DSO oscilloscopes, SMD rework stations, leak detectors, flaring kits, and high-pressure jet pumps.',
+      hi: 'आप डिजिटल मैनिफोल्ड गेज, वैक्यूम पंप, डीएसओ ऑसिलोस्कोप, एसएमडी रिवर्क स्टेशन, लीक डिटेक्टर और हाई प्रेशर जेट पंप पर स्वयं काम करना सीखेंगे।',
     },
   },
   {

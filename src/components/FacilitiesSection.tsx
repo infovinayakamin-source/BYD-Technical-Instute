@@ -40,14 +40,14 @@ export const FacilitiesSection: React.FC<FacilitiesSectionProps> = ({ lang }) =>
       icon: ShieldCheck,
       color: 'emerald',
       badgeBg: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
-      tagText: { en: 'Hostel @ ₹4,999/mo', hi: 'हॉस्टल ₹4,999/माह' },
+      tagText: { en: 'Live Testing Stations', hi: 'लाइव टेस्टिंग स्टेशन' },
       title: {
-        en: 'Safe Campus & Modern Hostel',
-        hi: 'सुरक्षित कैंपस एवं आधुनिक हॉस्टल'
+        en: 'Testing Bays & Diagnostic Stations',
+        hi: 'लाइव टेस्टिंग बे एवं डायग्नोस्टिक सेंटर'
       },
       desc: {
-        en: 'Safe on-campus hostel facility for outstation students from Gujarat, Rajasthan, MP & UP, complete with 3 hygienic meals daily, RO water, and high-speed Wi-Fi.',
-        hi: 'राजस्थान, एमपी, यूपी व गुजरात के बाहरी छात्रों के लिए कैंपस में सुरक्षित हॉस्टल, तीन समय ताजा पौष्टिक भोजन, शुद्ध पेयजल एवं वाई-फाई युक्त आवासीय सुविधा।'
+        en: 'Spacious air-conditioned workshops equipped with precision digital multimeters, electronic leak detectors, vacuum stations, and continuous power backup.',
+        hi: 'वातानुकूलित आधुनिक लैब्स, डिजिटल मल्टीमीटर्स, इलेक्ट्रॉनिक लीक डिटेक्टर्स, वैक्यूम स्टेशन्स और अनवरत पावर बैकअप के साथ व्यावहारिक प्रशिक्षण सुविधा।'
       }
     },
     {

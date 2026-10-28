@@ -48,7 +48,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { href: '#about', en: 'ABOUT US', hi: 'हमारे बारे में' },
     { href: '#courses', en: 'COURSES', hi: 'कोर्सेज' },
     { href: '#facilities', en: 'FACILITIES', hi: 'सुविधाएं' },
-    { href: '#hostel', en: 'HOSTEL & MESS', hi: 'हॉस्टल व भोजन' },
     { href: '#placements', en: 'PLACEMENTS', hi: 'प्लेसमेंट' },
     { href: '#gallery', en: 'LAB GALLERY', hi: 'प्रैक्टिकल लैब' },
     { href: '#reviews', en: 'REVIEWS', hi: 'समीक्षाएं' },

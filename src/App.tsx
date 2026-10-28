@@ -11,7 +11,6 @@ import { WelcomeSection } from './components/WelcomeSection';
 import { FacilitiesSection } from './components/FacilitiesSection';
 import { SocialHub } from './components/SocialHub';
 import { CourseCatalog } from './components/CourseCatalog';
-import { HostelSection } from './components/HostelSection';
 import { EarningCalculator } from './components/EarningCalculator';
 import { PlacementSection } from './components/PlacementSection';
 import { LabGallery } from './components/LabGallery';
@@ -105,7 +104,7 @@ export default function App() {
         {/* 2. Welcome Section (AIT Exact Layout: Since 2018, Story, 4 Metric Stats, Vision & Mission Cards) */}
         <WelcomeSection lang={lang} />
 
-        {/* 3. World-Class Facilities Section (AIT Exact 6-Card Numbered Layout: Advanced Labs, Hostel, Faculty, Placement, Smart Class, Toolkits) */}
+        {/* 3. World-Class Facilities Section (AIT Exact 6-Card Numbered Layout: Advanced Labs, Testing Bays, Faculty, Placement, Smart Class, Toolkits) */}
         <FacilitiesSection lang={lang} />
 
         {/* 4. Official Verified Channels (Facebook, Instagram & Google Business) */}
@@ -117,10 +116,7 @@ export default function App() {
           onSelectCourseForAdmission={handleSelectCourseForAdmission}
         />
 
-        {/* 6. Hostel & Food Highlight (₹4,999/mo) */}
-        <HostelSection lang={lang} />
-
-        {/* 7. Interactive ROI & Career Earning Calculator */}
+        {/* 6. Interactive ROI & Career Earning Calculator */}
         <EarningCalculator lang={lang} />
 
         {/* 8. 100% Placement & Business Ecosystem */}

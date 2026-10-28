@@ -104,11 +104,6 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenLeadsModal }) => {
                 </a>
               </li>
               <li>
-                <a href="#hostel" className="hover:text-amber-300 transition-colors flex items-center gap-1">
-                  <span>›</span> <span>{lang === 'hi' ? 'हॉस्टल एवं मेस' : 'Hostel & Mess'}</span>
-                </a>
-              </li>
-              <li>
                 <a href="#placements" className="hover:text-amber-300 transition-colors flex items-center gap-1">
                   <span>›</span> <span>{lang === 'hi' ? 'प्लेसमेंट सहायता' : 'Placements'}</span>
                 </a>

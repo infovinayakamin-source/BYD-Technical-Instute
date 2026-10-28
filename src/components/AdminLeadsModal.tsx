@@ -11,7 +11,6 @@ import {
   User,
   MapPin,
   GraduationCap,
-  Home,
   Database,
   Search
 } from 'lucide-react';
@@ -66,14 +65,13 @@ export const AdminLeadsModal: React.FC<AdminLeadsModalProps> = ({
 
   const exportCSV = () => {
     if (leads.length === 0) return;
-    const headers = ['Date', 'Name', 'Phone', 'Course', 'City', 'Hostel Needed', 'Batch', 'Status'];
+    const headers = ['Date', 'Name', 'Phone', 'Course', 'City', 'Batch', 'Status'];
     const rows = leads.map((l) => [
       new Date(l.createdAt).toLocaleDateString(),
       `"${l.name}"`,
       `"${l.phone}"`,
       `"${l.courseName}"`,
       `"${l.city}"`,
-      l.hostelRequired ? 'Yes' : 'No',
       l.preferredBatch,
       l.status,
     ]);
@@ -240,11 +238,6 @@ export const AdminLeadsModal: React.FC<AdminLeadsModalProps> = ({
                       <span className="flex items-center gap-1">
                         <MapPin className="w-3 h-3 text-slate-500" />
                         {lead.city}
-                      </span>
-                      <span>•</span>
-                      <span className="flex items-center gap-1">
-                        <Home className="w-3 h-3 text-red-400" />
-                        Hostel: {lead.hostelRequired ? 'Required (₹4,999)' : 'No'}
                       </span>
                       <span>•</span>
                       <span className="flex items-center gap-1">

@@ -4,13 +4,11 @@ import { GALLERY_ITEMS, INSTITUTE_INFO } from '../data/instituteData';
 import {
   Wrench,
   Cpu,
-  Wind,
   CheckCircle2,
   ExternalLink,
   Instagram,
   Sparkles,
   Award,
-  Home,
   X,
   Layers
 } from 'lucide-react';
@@ -27,7 +25,7 @@ export const LabGallery: React.FC<LabGalleryProps> = ({ lang }) => {
     { id: 'all', en: 'All Workstations', hi: 'सभी वर्कशॉप्स' },
     { id: 'lab', en: 'Practical Labs', hi: 'प्रैक्टिकल लैब्स' },
     { id: 'students', en: 'Student Batches', hi: 'छात्र वर्कशॉप' },
-    { id: 'hostel', en: 'Hostel Facilities', hi: 'हॉस्टल सुविधाएं' },
+    { id: 'tools', en: 'Modern Toolkits', hi: 'आधुनिक टूल्स' },
     { id: 'certificates', en: 'Certifications', hi: 'प्रमाण पत्र वितरण' },
   ];
 
@@ -42,8 +40,8 @@ export const LabGallery: React.FC<LabGalleryProps> = ({ lang }) => {
         return <Cpu className="w-6 h-6 text-amber-400" />;
       case 'students':
         return <Wrench className="w-6 h-6 text-blue-400" />;
-      case 'hostel':
-        return <Home className="w-6 h-6 text-emerald-400" />;
+      case 'tools':
+        return <Wrench className="w-6 h-6 text-emerald-400" />;
       case 'certificates':
         return <Award className="w-6 h-6 text-purple-400" />;
       default:
