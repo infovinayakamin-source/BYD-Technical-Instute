@@ -36,15 +36,41 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
         className="relative w-full max-w-3xl max-h-[90vh] bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-slate-100"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header with technical gradient banner (Zero Image) */}
+        {/* If course has uploaded assets, show 100% opacity banner */}
+        {course.image && course.image.startsWith('/assets/') && (
+          <div className={`relative w-full h-48 sm:h-64 flex items-center justify-center border-b border-slate-700 overflow-hidden ${
+            course.id === 'ac-inverter-master' ? 'bg-gradient-to-b from-white via-slate-50 to-slate-100 p-3' : 'bg-slate-950'
+          }`}>
+            <img
+              src={course.image}
+              alt={course.title[lang]}
+              className={`h-full w-full opacity-100 ${
+                course.id === 'ac-inverter-master'
+                  ? 'object-contain object-center'
+                  : 'object-cover object-center'
+              }`}
+              style={{ opacity: 1 }}
+            />
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 p-2 rounded-full bg-slate-900/80 hover:bg-black text-white border border-slate-700 transition-colors z-20 shadow-md"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+        )}
+
+        {/* Header with technical gradient banner */}
         <div className="relative p-6 sm:p-8 bg-gradient-to-r from-[#0b2464] via-[#0e2c7a] to-[#071740] shrink-0 border-b border-blue-900/60">
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-black/50 hover:bg-black/80 text-slate-300 hover:text-white border border-white/20 transition-colors"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          {/* Close button (only shown here if not already rendered above) */}
+          {(!course.image || !course.image.startsWith('/assets/')) && (
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 p-2 rounded-full bg-black/50 hover:bg-black/80 text-slate-300 hover:text-white border border-white/20 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          )}
 
           {/* Badges and title inside header */}
           <div className="pr-8">

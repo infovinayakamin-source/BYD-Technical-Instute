@@ -61,10 +61,14 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="bg-[#0b2464] text-white border-b border-blue-900/80 px-4 sm:px-6 lg:px-8 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
-          {/* Left: Official Logo Monogram + Institute Name + Accreditations */}
-          <a href="#home" className="flex items-center gap-3.5 group">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-[#f05a28] via-[#ea580c] to-[#f59e0b] text-white font-black text-sm sm:text-base flex items-center justify-center shadow-md border-2 border-white/80 shrink-0 group-hover:scale-105 transition-transform tracking-wider font-heading">
-              BYD
+          {/* Left: Official Institute Logo + Name + Accreditations */}
+          <a href="#home" className="flex items-center gap-3 sm:gap-3.5 group">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white p-1 shadow-md border border-white/90 shrink-0 group-hover:scale-105 transition-transform flex items-center justify-center overflow-hidden">
+              <img
+                src={INSTITUTE_INFO.logoUrl}
+                alt="BYD Technical & Training Institute Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
 
             <div className="flex flex-col">

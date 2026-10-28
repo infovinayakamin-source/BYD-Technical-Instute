@@ -13,6 +13,7 @@ import {
   Sparkles,
   ArrowRight
 } from 'lucide-react';
+import { StatCounterCard } from './StatCounterCard';
 
 interface WelcomeSectionProps {
   lang: Language;
@@ -74,43 +75,55 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({ lang }) => {
               </p>
             </div>
 
-            {/* 4 Clean Metric Cards (Exact AIT Style) */}
+            {/* 4 Animated Metric Cards with Smooth Count-Up Motion & Hover Effects */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-2">
-              <div className="bg-white p-4 rounded-2xl border border-slate-200/90 shadow-sm text-center hover:border-blue-400 hover:shadow-md transition-all">
-                <span className="text-2xl sm:text-3xl font-black text-[#0f2f7d] block font-heading">
-                  100%
-                </span>
-                <span className="text-xs font-bold text-slate-600 mt-0.5 block font-subheading">
-                  {lang === 'hi' ? 'लाइव प्रैक्टिकल' : 'Practical Lab'}
-                </span>
-              </div>
+              <StatCounterCard
+                target={100}
+                suffix="%"
+                label={lang === 'hi' ? 'लाइव प्रैक्टिकल' : 'Practical Lab'}
+                textColor="#0f2f7d"
+                accentColor="#2563eb"
+                gradientFrom="from-[#0f2f7d]"
+                gradientTo="to-blue-500"
+                delay={0}
+                duration={1600}
+              />
 
-              <div className="bg-white p-4 rounded-2xl border border-slate-200/90 shadow-sm text-center hover:border-blue-400 hover:shadow-md transition-all">
-                <span className="text-2xl sm:text-3xl font-black text-[#f05a28] block font-heading">
-                  10+
-                </span>
-                <span className="text-xs font-bold text-slate-600 mt-0.5 block font-subheading">
-                  {lang === 'hi' ? 'कोर्स एवं अप्लायंस' : 'Programs'}
-                </span>
-              </div>
+              <StatCounterCard
+                target={10}
+                suffix="+"
+                label={lang === 'hi' ? 'कोर्स एवं अप्लायंस' : 'Programs'}
+                textColor="#f05a28"
+                accentColor="#f05a28"
+                gradientFrom="from-[#f05a28]"
+                gradientTo="to-amber-500"
+                delay={150}
+                duration={1200}
+              />
 
-              <div className="bg-white p-4 rounded-2xl border border-slate-200/90 shadow-sm text-center hover:border-blue-400 hover:shadow-md transition-all">
-                <span className="text-2xl sm:text-3xl font-black text-[#0f2f7d] block font-heading">
-                  15+
-                </span>
-                <span className="text-xs font-bold text-slate-600 mt-0.5 block font-subheading">
-                  {lang === 'hi' ? 'वर्ष अनुभवी ट्रेनर्स' : 'Expert Faculty'}
-                </span>
-              </div>
+              <StatCounterCard
+                target={15}
+                suffix="+"
+                label={lang === 'hi' ? 'वर्ष अनुभवी ट्रेनर्स' : 'Expert Faculty'}
+                textColor="#0f2f7d"
+                accentColor="#1d4ed8"
+                gradientFrom="from-[#0f2f7d]"
+                gradientTo="to-blue-400"
+                delay={300}
+                duration={1400}
+              />
 
-              <div className="bg-white p-4 rounded-2xl border border-slate-200/90 shadow-sm text-center hover:border-blue-400 hover:shadow-md transition-all">
-                <span className="text-2xl sm:text-3xl font-black text-[#059669] block font-heading">
-                  5000+
-                </span>
-                <span className="text-xs font-bold text-slate-600 mt-0.5 block font-subheading">
-                  {lang === 'hi' ? 'प्रशिक्षित छात्र' : 'Technicians'}
-                </span>
-              </div>
+              <StatCounterCard
+                target={5000}
+                suffix="+"
+                label={lang === 'hi' ? 'प्रशिक्षित छात्र' : 'Technicians'}
+                textColor="#059669"
+                accentColor="#10b981"
+                gradientFrom="from-emerald-600"
+                gradientTo="to-teal-400"
+                delay={450}
+                duration={1900}
+              />
             </div>
 
             {/* Accreditation Badges */}

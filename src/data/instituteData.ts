@@ -10,7 +10,7 @@ export const INSTITUTE_INFO = {
     en: 'Because Learning Has No Borders • 100% Practical Technical Skills',
     hi: 'सीखने की कोई सीमा नहीं • 100% प्रैक्टिकल तकनीकी हुनर और रोजगार',
   },
-  logoUrl: '/byd-logo.jpg',
+  logoUrl: '/assets/aistudio/image_581635be.png',
   remoteLogoUrl: 'https://instagram.famd4-1.fna.fbcdn.net/v/t51.82787-19/780551073_17879389515685779_5575352620554364322_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ig_cache_key=GKFDhi6TH_LENYU-AKKlrz2roV9NbmNDAQAB0j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=HYkVc9vZ6McQ7kNvwEUkuce&_nc_oc=AdqlEPq3nNtE_DQU8J8qQh3qcKRP1Ld1VKS-HC0JeU1CXTboffzevKjf1DmzSO929Nzjwl5a4bycB6VhUQeeK7zL&_nc_zt=24&_nc_ht=instagram.famd4-1.fna&_nc_gid=0mtYhYkFDN5I8E51vU19Ww&_nc_ss=7b6a8&oh=00_AQNgHBGp38iARhII_xx5Hck7N0vF4hcy33bmZ4_H9wPiCQ&oe=6ADFB881',
   location: {
     en: 'Tragad, Chandkheda, Ahmedabad, Gujarat, India',
@@ -136,7 +136,7 @@ export const COURSES: Course[] = [
       en: ['Digital Manifold Gauge', 'Micron Vacuum Pump', 'Flaring & Swaging Kit', 'Brazing Torch', 'Digital Clamp Meter', 'Leak Detector Spray', 'High Pressure Jet Pump'],
       hi: ['डिजिटल मैनिफोल्ड गेज', 'माइक्रोन वैक्यूम पंप', 'फ्लेयरिंग और स्वाइजिंग टूलकिट', 'गैस ब्रेजिंग टॉर्च', 'डिजिटल क्लैम्प मीटर', 'लीक डिटेक्टर', 'हाई प्रेशर जेट पंप'],
     },
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/aistudio/image_e10e3466.png',
   },
   {
     id: 'refrigerator-deep-freezer',
@@ -216,7 +216,7 @@ export const COURSES: Course[] = [
       en: ['Pinching Pliers', 'Digital Weighing Scale', 'Capillary Cutter', 'Safety Charging Valve', 'Digital Multimeter', 'Gas Can Tap Valve'],
       hi: ['पिंचिंग प्लायर', 'डिजिटल वेट स्केल (वजन कांटा)', 'कैपिलरी कटर', 'सेफ्टी चार्जिंग वाल्व', 'डिजिटल मल्टीमीटर', 'कैन वॉल्व'],
     },
-    image: 'https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/aistudio/image_222fe3ed.png',
   },
   {
     id: 'washing-machine-specialist',
@@ -296,7 +296,7 @@ export const COURSES: Course[] = [
       en: ['Drum Puller Tool', 'Bearing Puller', 'Multi-Pin Probe Meter', 'Spring Clamping Pliers', 'Pressure Gauge Simulator'],
       hi: ['ड्रम पुलर टूल', 'बेयरिंग पुलर', 'मल्टीमीटर प्रोब', 'स्प्रिंग क्लैम्प प्लायर', 'प्रेशर गेज सिम्युलेटर'],
     },
-    image: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'ro-water-purifier',

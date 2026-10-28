@@ -30,12 +30,16 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenLeadsModal }) => {
           {/* Col 1: Brand & About (Span 3) */}
           <div className="lg:col-span-3 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#f05a28] via-[#ea580c] to-[#f59e0b] text-white font-black text-sm flex items-center justify-center shadow-md border-2 border-white/80 shrink-0 tracking-wider font-heading">
-                BYD
+              <div className="w-14 h-14 rounded-xl bg-white p-1 shadow-md border border-white/90 shrink-0 flex items-center justify-center overflow-hidden">
+                <img
+                  src={INSTITUTE_INFO.logoUrl}
+                  alt="BYD Technical & Training Institute Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <span className="text-base font-black text-white block font-heading leading-tight">
-                  {lang === 'hi' ? 'बी.वाई.डी. टेक्निकल इंस्टीट्यूट' : 'Ahmedabad Technical Institute'}
+                  {lang === 'hi' ? 'बी.वाई.डी. टेक्निकल एंड ट्रेनिंग इंस्टीट्यूट' : 'BYD Technical & Training Institute'}
                 </span>
                 <span className="text-xs text-amber-300 font-bold block font-subheading">
                   Excellence in Education Since 2018

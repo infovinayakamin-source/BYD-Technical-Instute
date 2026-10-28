@@ -19,13 +19,22 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ lang }) => {
   return (
-    <section id="home" className="relative min-h-[600px] lg:min-h-[680px] flex items-center justify-center overflow-hidden">
-      {/* Modern High-Tech Deep Navy Gradient Background (Zero Image) */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#06122d] via-[#0b2464] to-[#040d21]">
+    <section id="home" className="relative min-h-[600px] lg:min-h-[680px] flex items-center justify-center overflow-hidden bg-[#06122d]">
+      {/* Home Page Background Image with requested 50% opacity */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src="/assets/aistudio/image_83e41965.png"
+          alt="Technical Education Future"
+          className="w-full h-full object-cover object-center opacity-50 pointer-events-none select-none transition-opacity duration-300"
+          style={{ opacity: 0.5 }}
+        />
+        {/* Deep navy vignette & contrast gradient to preserve text clarity */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06122d]/95 via-[#06122d]/75 to-[#06122d]/45 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#06122d] via-transparent to-[#06122d]/50 pointer-events-none" />
         {/* Subtle geometric light orbs */}
-        <div className="absolute top-10 right-10 w-96 h-96 bg-[#f05a28]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
+        <div className="absolute top-10 right-10 w-96 h-96 bg-[#f05a28]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] opacity-30 pointer-events-none" />
       </div>
 
       {/* Content Container (Exact AIT Hero Layout) */}
