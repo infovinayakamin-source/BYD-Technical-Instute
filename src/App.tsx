@@ -7,10 +7,11 @@ import React, { useState, useEffect } from 'react';
 import { Language, FontTheme } from './types';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { InstagramHighlights } from './components/InstagramHighlights';
-import { InstagramReelsSection } from './components/InstagramReelsSection';
-import { CourseCatalog } from './components/CourseCatalog';
 import { WelcomeSection } from './components/WelcomeSection';
+import { FacilitiesSection } from './components/FacilitiesSection';
+import { SocialHub } from './components/SocialHub';
+import { CourseCatalog } from './components/CourseCatalog';
+import { EarningCalculator } from './components/EarningCalculator';
 import { PlacementSection } from './components/PlacementSection';
 import { LabGallery } from './components/LabGallery';
 import { Testimonials } from './components/Testimonials';
@@ -97,48 +98,51 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* 1. Hero Section (BYD "Because Learning Has No Borders" with Instagram Profile Card) */}
+        {/* 1. Hero Section (BYD Technical Institute - "तकनीकी शिक्षा से आत्मनिर्भर भविष्य") */}
         <Hero lang={lang} />
 
-        {/* 2. Instagram Story Highlights Bar (Live AC, PCB, Fridge, Washing Machine, Certificates) */}
-        <InstagramHighlights lang={lang} />
+        {/* 2. Welcome to BYD Institute (Story, 4 Animated Motion Stats, Vision & Mission) */}
+        <WelcomeSection lang={lang} />
 
-        {/* 3. 100% Practical Vocational Course Catalog */}
+        {/* 3. Modern Technical Facilities (6 Numbered Diagnostic Bay Cards & Tour) */}
+        <FacilitiesSection lang={lang} />
+
+        {/* 4. Official Social Channels & Verified Student Reviews (Facebook, Instagram, Google Maps) */}
+        <SocialHub lang={lang} />
+
+        {/* 5. 100% Practical Vocational Course Catalog (With all 5 real workshop images) */}
         <CourseCatalog
           lang={lang}
           onSelectCourseForAdmission={handleSelectCourseForAdmission}
         />
 
-        {/* 4. Official Instagram Practical Reels Showcase (@byd_technical_institute) */}
-        <InstagramReelsSection lang={lang} />
-
-        {/* 5. Real Campus & Practical Lab Workstation Gallery */}
-        <LabGallery lang={lang} />
-
-        {/* 6. About BYD Institute (Story, 4 Animated Stats, Vision & Mission) */}
-        <WelcomeSection lang={lang} />
+        {/* 6. Interactive Technician Career Earning & ROI Calculator */}
+        <EarningCalculator lang={lang} />
 
         {/* 7. 100% Placement & Business Setup Ecosystem */}
         <PlacementSection lang={lang} />
 
-        {/* 8. Student Voices & Success Stories (Alumni Reviews) */}
+        {/* 8. Real Campus & Practical Lab Workstations Gallery */}
+        <LabGallery lang={lang} />
+
+        {/* 9. Student Voices & Success Stories (Alumni Reviews) */}
         <Testimonials lang={lang} />
 
-        {/* 9. Free Demo Class & Admission Registration Form */}
+        {/* 10. Free Demo Class & Admission Registration Form */}
         <AdmissionForm
           lang={lang}
           preSelectedCourseId={preSelectedCourseId}
           onLeadAdded={refreshLeadCount}
         />
 
-        {/* 10. Chandkheda Campus Location, Directions & Operating Hours */}
+        {/* 11. Chandkheda Campus Location, Directions & Operating Hours */}
         <ContactLocation lang={lang} />
 
-        {/* 11. Frequently Asked Questions */}
+        {/* 12. Frequently Asked Questions */}
         <FaqSection lang={lang} />
       </main>
 
-      {/* 14. Comprehensive AIT Deep Navy Blue Footer with Map & Download Brochure bar */}
+      {/* Comprehensive AIT Deep Navy Blue Footer with Map & Quick Links */}
       <Footer
         lang={lang}
         onOpenLeadsModal={() => setIsLeadsModalOpen(true)}

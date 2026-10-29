@@ -38,8 +38,7 @@ export const CourseCatalog: React.FC<CourseCatalogProps> = ({
     { id: 'ac-hvac', en: 'AC & HVAC', hi: 'एसी एवं एचवीएसी' },
     { id: 'refrigeration', en: 'Refrigerator & Deep Freezer', hi: 'फ्रिज एवं डीप फ्रीजर' },
     { id: 'appliances', en: 'Home Appliances (Washing, RO, Geyser)', hi: 'होम अप्लायंसेज (वॉशिंग, आरओ, गीजर)' },
-    { id: 'electronics', en: 'Inverter PCB Card Repair', hi: 'इन्वर्टर पीसीबी कार्ड' },
-    { id: 'electrical', en: 'House Wiring & Industrial', hi: 'हाउस वायरिंग' },
+    { id: 'electrical', en: 'House Wiring & Electrical', hi: 'हाउस वायरिंग' },
   ];
 
   const filteredCourses =

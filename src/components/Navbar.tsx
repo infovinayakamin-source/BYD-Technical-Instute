@@ -46,7 +46,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navLinks = [
     { href: '#home', en: 'HOME', hi: 'होम' },
     { href: '#courses', en: 'PRACTICAL COURSES', hi: 'कोर्सेज' },
-    { href: '#reels', en: 'INSTAGRAM REELS', hi: 'इंस्टाग्राम रील्स' },
+    { href: '#facilities', en: 'FACILITIES', hi: 'सुविधाएं' },
+    { href: '#calculator', en: 'EARNING CALCULATOR', hi: 'कमाई कैलकुलेटर' },
     { href: '#gallery', en: 'LAB GALLERY', hi: 'प्रैक्टिकल लैब' },
     { href: '#about', en: 'ABOUT BYD', hi: 'संस्थान परिचय' },
     { href: '#reviews', en: 'REVIEWS', hi: 'समीक्षाएं' },
@@ -76,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-slate-300 tracking-wider uppercase font-subheading mt-0.5">
                 <span className="text-[#f05a28] font-black">BUILD YOUR DREAMS</span>
                 <span>•</span>
-                <span className="text-pink-400 font-extrabold">@byd_technical_institute</span>
+                <span className="text-blue-300 font-extrabold">ISO 9001:2015</span>
                 <span className="hidden md:inline">•</span>
                 <span className="hidden md:inline text-emerald-300">CHANDKHEDA, AHMEDABAD</span>
               </div>
@@ -85,15 +86,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right: Top Action Badges */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Instagram Handle Pill */}
+            {/* Direct Helpline Call */}
             <a
-              href={INSTITUTE_INFO.socialLinks.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white text-[11px] font-extrabold shadow-sm transition-all"
+              href={`tel:${INSTITUTE_INFO.phone}`}
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-blue-900/60 hover:bg-blue-800 text-blue-200 border border-blue-700/60 text-[11px] font-extrabold shadow-sm transition-all"
             >
-              <Instagram className="w-3.5 h-3.5" />
-              <span>Follow on Instagram</span>
+              <Phone className="w-3.5 h-3.5 text-blue-400" />
+              <span>{INSTITUTE_INFO.phoneDisplay}</span>
             </a>
 
             {/* Grievance / WhatsApp Help Pill */}
