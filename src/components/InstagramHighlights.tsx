@@ -85,7 +85,7 @@ export const InstagramHighlights: React.FC<InstagramHighlightsProps> = ({ lang }
       name: { en: 'Washing Machine', hi: 'वॉशिंग मशीन' },
       icon: '🧺',
       badge: 'Direct Drive',
-      image: 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/aistudio/image_dcaffab6.png',
       title: {
         en: 'Direct Drive DD Inverter Motor & Pulsator Repair',
         hi: 'डायरेक्ट ड्राइव डीडी इन्वर्टर मोटर व पल्सेटर रिपेयर',

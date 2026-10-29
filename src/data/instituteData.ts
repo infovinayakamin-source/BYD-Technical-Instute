@@ -295,7 +295,7 @@ export const COURSES: Course[] = [
       en: ['Drum Puller Tool', 'Bearing Puller', 'Multi-Pin Probe Meter', 'Spring Clamping Pliers', 'Pressure Gauge Simulator'],
       hi: ['ड्रम पुलर टूल', 'बेयरिंग पुलर', 'मल्टीमीटर प्रोब', 'स्प्रिंग क्लैम्प प्लायर', 'प्रेशर गेज सिम्युलेटर'],
     },
-    image: 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/aistudio/image_dcaffab6.png',
   },
   {
     id: 'ro-water-purifier',
@@ -368,7 +368,7 @@ export const COURSES: Course[] = [
       en: ['Digital TDS Meter', 'Water Pressure Gauge', 'Filter Spanner Set', 'Tube Cutter', 'pH Test Liquid Kit'],
       hi: ['डिजिटल टीडीएस मीटर', 'वाटर प्रेशर गेज', 'फिल्टर हाउसिंग स्पैनर', 'ट्यूब कटर', 'पीएच टेस्ट किट'],
     },
-    image: 'https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/aistudio/image_02d8b08a.png',
   },
   {
     id: 'geyser-water-heater',
@@ -743,7 +743,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'g3',
     title: { en: 'Automatic Washing Machine Drum Lab', hi: 'ऑटोमैटिक वॉशिंग मशीन ड्रम व गियरबॉक्स लैब' },
     category: 'lab',
-    image: 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/aistudio/image_dcaffab6.png',
     description: { en: 'Direct drive inverter motor and clutch assembly practical.', hi: 'डायरेक्ट ड्राइव मोटर और क्लच असेंबली की प्रैक्टिकल ट्रेनिंग।' },
   },
   {

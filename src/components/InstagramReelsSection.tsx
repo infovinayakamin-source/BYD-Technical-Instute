@@ -76,7 +76,7 @@ export const InstagramReelsSection: React.FC<InstagramReelsSectionProps> = ({ la
         hi: 'डायरेक्ट ड्राइव वॉशिंग मशीन मोटर एवं ड्रम बेयरिंग रिपेयर',
       },
       category: 'Washing Machine',
-      image: 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/aistudio/image_dcaffab6.png',
       views: '41.2K',
       likes: '2.8K',
       comments: '139',
