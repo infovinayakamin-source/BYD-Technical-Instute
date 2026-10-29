@@ -11,7 +11,7 @@ import {
   ShieldCheck,
   Database,
   Download,
-  Navigation
+  Clock
 } from 'lucide-react';
 
 interface FooterProps {
@@ -147,14 +147,14 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenLeadsModal }) => {
             </ul>
           </div>
 
-          {/* Col 4: Contact & Google Map (Span 4) */}
+          {/* Col 4: Contact & Helpline (Span 4) */}
           <div className="lg:col-span-4 space-y-4">
             <h3 className="text-sm font-black uppercase tracking-wider text-white font-heading border-b border-blue-900 pb-2">
-              📍 {lang === 'hi' ? 'संपर्क एवं मैप (Find Us)' : 'Contact & Find Us'}
+              📞 {lang === 'hi' ? 'संपर्क एवं हेल्पलाइन' : 'Contact & Helpline'}
             </h3>
 
             {/* Direct Phone Numbers with Blue Circles (Exact AIT Style) */}
-            <div className="space-y-2 text-xs">
+            <div className="space-y-2.5 text-xs">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-300 flex items-center justify-center shrink-0 border border-blue-400/30">
                   <Phone className="w-4 h-4 text-emerald-400" />
@@ -190,25 +190,21 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenLeadsModal }) => {
                   </a>
                 </div>
               </div>
-            </div>
 
-            {/* Mini Map Card (Exact AIT Find Us embed) */}
-            <div className="relative rounded-xl overflow-hidden border border-white/20 shadow-md h-28 bg-slate-900 group">
-              <iframe
-                title="BYD Institute Map Location"
-                src={INSTITUTE_INFO.socialLinks.googleMapsEmbed}
-                className="w-full h-full border-0 filter brightness-90 group-hover:brightness-100 transition-all pointer-events-none"
-                loading="lazy"
-              />
-              <a
-                href={INSTITUTE_INFO.socialLinks.googleBusiness}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute inset-0 bg-black/40 hover:bg-black/20 flex items-center justify-center gap-1.5 text-white text-xs font-black transition-colors"
-              >
-                <Navigation className="w-3.5 h-3.5 text-amber-300" />
-                <span>{lang === 'hi' ? 'गूगल मैप में खोलें →' : 'Open in Maps →'}</span>
-              </a>
+              {/* Working Hours Card */}
+              <div className="pt-2">
+                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-blue-950/60 border border-blue-800/60">
+                  <Clock className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-[10px] text-amber-300 font-bold uppercase block">
+                      {lang === 'hi' ? 'कैंपस व वर्कशॉप का समय:' : 'Campus & Lab Hours:'}
+                    </span>
+                    <p className="text-[11px] text-blue-100 leading-snug mt-0.5">
+                      {INSTITUTE_INFO.hours[lang]}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Language } from '../types';
 import { INSTITUTE_INFO } from '../data/instituteData';
 import {
@@ -16,7 +16,10 @@ import {
   HelpCircle,
   Clock,
   Facebook,
-  Instagram
+  Instagram,
+  ChevronDown,
+  Check,
+  Languages
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -34,6 +37,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +46,19 @@ export const Navbar: React.FC<NavbarProps> = ({
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        langDropdownRef.current &&
+        !langDropdownRef.current.contains(event.target as Node)
+      ) {
+        setLangDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const navLinks = [
@@ -117,55 +135,98 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>{lang === 'hi' ? 'एडमिशन 2026' : 'Admission 2026'}</span>
             </a>
 
-            {/* Single Circular Language Button for Both Languages (हिंदी & English) */}
-            <button
-              type="button"
-              onClick={() => setLang(lang === 'hi' ? 'en' : 'hi')}
-              className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[#0f2d7c] via-[#0b2464] to-[#081844] border-2 border-[#f05a28] hover:border-amber-400 shadow-md hover:shadow-orange-500/30 active:scale-95 transition-all duration-200 flex flex-col items-center justify-center cursor-pointer select-none group shrink-0 focus:outline-none focus:ring-2 focus:ring-orange-400"
-              title={
-                lang === 'hi'
-                  ? 'वर्तमान भाषा: हिंदी • इंग्लिश में बदलने के लिए क्लिक करें'
-                  : 'Current language: English • Click to switch to हिंदी'
-              }
-              aria-label={`Language switch: currently ${lang === 'hi' ? 'Hindi' : 'English'}. Click to toggle.`}
-            >
-              {/* Mini corner Globe Badge */}
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#f05a28] text-white flex items-center justify-center shadow-xs border border-white/60">
-                <Globe className="w-2.5 h-2.5" />
-              </span>
+            {/* Executive International Language Switcher with Floating Menu */}
+            <div className="relative shrink-0" ref={langDropdownRef}>
+              <button
+                type="button"
+                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                className="relative flex items-center gap-2 px-3 py-1.5 sm:py-2 rounded-xl bg-gradient-to-b from-[#0f285d] to-[#091838] hover:from-[#153477] hover:to-[#0f2452] border border-amber-400/50 hover:border-amber-400 text-white shadow-md shadow-blue-950/50 transition-all duration-200 cursor-pointer select-none group"
+                aria-expanded={langDropdownOpen}
+                aria-haspopup="true"
+                aria-label="Select Language"
+              >
+                {/* Glowing emblem icon */}
+                <div className="w-6 h-6 rounded-lg bg-gradient-to-tr from-[#f05a28] to-amber-500 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                  <Languages className="w-3.5 h-3.5" />
+                </div>
 
-              {/* Both languages inside the single circle */}
-              <div className="flex flex-col items-center justify-center leading-none">
-                <span
-                  className={`text-[11px] font-black tracking-tight transition-all ${
-                    lang === 'hi'
-                      ? 'text-amber-300 font-extrabold scale-110 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]'
-                      : 'text-slate-400 group-hover:text-slate-200'
-                  }`}
-                >
-                  हिंदी
+                {/* Current Language Name */}
+                <span className="text-xs sm:text-sm font-black tracking-tight text-white group-hover:text-amber-200 transition-colors">
+                  {lang === 'hi' ? 'हिंदी' : 'English'}
                 </span>
 
-                <span className="w-5 h-[1px] bg-white/30 my-0.5 group-hover:bg-amber-400/50 transition-colors" />
-
-                <span
-                  className={`text-[9px] font-black uppercase tracking-wider transition-all ${
-                    lang === 'en'
-                      ? 'text-amber-300 font-extrabold scale-110 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]'
-                      : 'text-slate-400 group-hover:text-slate-200'
+                {/* Dropdown Chevron */}
+                <ChevronDown
+                  className={`w-3.5 h-3.5 text-amber-300 transition-transform duration-200 ${
+                    langDropdownOpen ? 'rotate-180' : ''
                   }`}
-                >
-                  ENG
-                </span>
-              </div>
+                />
+              </button>
 
-              {/* Active Indicator Dot */}
-              <span
-                className={`absolute -bottom-0.5 w-2 h-2 rounded-full border border-white ${
-                  lang === 'hi' ? 'bg-[#f05a28]' : 'bg-emerald-400'
-                }`}
-              />
-            </button>
+              {/* Floating Menu Popover */}
+              {langDropdownOpen && (
+                <div className="absolute right-0 top-full mt-2 w-52 rounded-2xl bg-slate-950/95 backdrop-blur-xl border border-slate-700/80 shadow-2xl p-2 z-50 animate-in fade-in zoom-in-95 duration-150">
+                  <div className="px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-slate-400 border-b border-slate-800 flex items-center justify-between mb-1">
+                    <span>{lang === 'hi' ? 'भाषा का चयन करें' : 'Select Language'}</span>
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  </div>
+
+                  {/* Hindi Option */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setLang('hi');
+                      setLangDropdownOpen(false);
+                    }}
+                    className={`w-full flex items-center justify-between p-2 rounded-xl transition-all text-left cursor-pointer ${
+                      lang === 'hi'
+                        ? 'bg-gradient-to-r from-orange-500/20 to-amber-500/10 border border-orange-500/40 text-white'
+                        : 'hover:bg-slate-800 text-slate-300 hover:text-white'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-orange-500/20 text-[#f05a28] border border-orange-500/30 flex items-center justify-center font-black text-sm">
+                        अ
+                      </div>
+                      <div>
+                        <span className="text-xs font-black block text-white">हिंदी</span>
+                        <span className="text-[10px] text-slate-400 block">Hindi (Official)</span>
+                      </div>
+                    </div>
+                    {lang === 'hi' && (
+                      <Check className="w-4 h-4 text-emerald-400 stroke-[3]" />
+                    )}
+                  </button>
+
+                  {/* English Option */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setLang('en');
+                      setLangDropdownOpen(false);
+                    }}
+                    className={`w-full flex items-center justify-between p-2 rounded-xl transition-all text-left cursor-pointer mt-1 ${
+                      lang === 'en'
+                        ? 'bg-gradient-to-r from-blue-500/20 to-cyan-500/10 border border-blue-500/40 text-white'
+                        : 'hover:bg-slate-800 text-slate-300 hover:text-white'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/30 flex items-center justify-center font-black text-xs">
+                        EN
+                      </div>
+                      <div>
+                        <span className="text-xs font-black block text-white">English</span>
+                        <span className="text-[10px] text-slate-400 block">International</span>
+                      </div>
+                    </div>
+                    {lang === 'en' && (
+                      <Check className="w-4 h-4 text-emerald-400 stroke-[3]" />
+                    )}
+                  </button>
+                </div>
+              )}
+            </div>
 
             {/* Admin Lead button for institute owner */}
             {leadCount > 0 && (
@@ -256,52 +317,45 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-6 shadow-2xl animate-in slide-in-from-top-4 duration-200 text-white">
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-              <div className="flex flex-col">
-                <span className="text-xs text-white font-black flex items-center gap-1.5">
-                  <Globe className="w-4 h-4 text-[#f05a28]" />
-                  {lang === 'hi' ? 'भाषा (Language)' : 'Language'}
-                </span>
-                <span className="text-[10px] text-slate-400">
-                  {lang === 'hi' ? 'सर्कल बटन दबाकर भाषा बदलें' : 'Tap circle button to switch'}
-                </span>
-              </div>
-
-              {/* Single Circular Language Button for Both Languages */}
-              <button
-                type="button"
-                onClick={() => setLang(lang === 'hi' ? 'en' : 'hi')}
-                className="relative w-12 h-12 rounded-full bg-gradient-to-br from-[#0f2d7c] via-[#0b2464] to-[#081844] border-2 border-[#f05a28] shadow-md flex flex-col items-center justify-center cursor-pointer select-none active:scale-95 transition-all"
-                aria-label="Toggle language"
-                title="भाषा बदलें (हिंदी / English)"
-              >
-                <div className="flex flex-col items-center justify-center leading-none">
-                  <span
-                    className={`text-[11px] font-black transition-all ${
-                      lang === 'hi'
-                        ? 'text-amber-300 scale-110 font-extrabold drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]'
-                        : 'text-slate-400'
-                    }`}
-                  >
-                    हिंदी
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-orange-500/20 text-[#f05a28] flex items-center justify-center border border-orange-500/30">
+                  <Globe className="w-4 h-4 text-amber-300" />
+                </div>
+                <div>
+                  <span className="text-xs text-white font-bold block">
+                    {lang === 'hi' ? 'भाषा (Language)' : 'Select Language'}
                   </span>
-                  <span className="w-5 h-[1px] bg-white/30 my-0.5" />
-                  <span
-                    className={`text-[9px] font-black uppercase tracking-wider transition-all ${
-                      lang === 'en'
-                        ? 'text-amber-300 scale-110 font-extrabold drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]'
-                        : 'text-slate-400'
-                    }`}
-                  >
-                    ENG
+                  <span className="text-[10px] text-slate-400">
+                    {lang === 'hi' ? 'वेबसाइट की भाषा बदलें' : 'Switch site language'}
                   </span>
                 </div>
+              </div>
 
-                <span
-                  className={`absolute -bottom-0.5 w-2 h-2 rounded-full border border-white ${
-                    lang === 'hi' ? 'bg-[#f05a28]' : 'bg-emerald-400'
+              {/* Premium Segmented Toggle for Mobile */}
+              <div className="inline-flex p-1 rounded-full bg-slate-950 border border-amber-400/40 shadow-inner">
+                <button
+                  type="button"
+                  onClick={() => setLang('hi')}
+                  className={`px-3 py-1.5 rounded-full text-xs font-black transition-all ${
+                    lang === 'hi'
+                      ? 'bg-gradient-to-r from-[#f05a28] to-[#ea580c] text-white shadow-md'
+                      : 'text-slate-400 hover:text-white'
                   }`}
-                />
-              </button>
+                >
+                  हिंदी
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLang('en')}
+                  className={`px-3 py-1.5 rounded-full text-xs font-black transition-all ${
+                    lang === 'en'
+                      ? 'bg-gradient-to-r from-[#f05a28] to-[#ea580c] text-white shadow-md'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  English
+                </button>
+              </div>
             </div>
 
             {navLinks.map((link) => (
