@@ -135,7 +135,7 @@ export const COURSES: Course[] = [
       en: ['Digital Manifold Gauge', 'Micron Vacuum Pump', 'Flaring & Swaging Kit', 'Brazing Torch', 'Digital Clamp Meter', 'Leak Detector Spray', 'High Pressure Jet Pump'],
       hi: ['डिजिटल मैनिफोल्ड गेज', 'माइक्रोन वैक्यूम पंप', 'फ्लेयरिंग और स्वाइजिंग टूलकिट', 'गैस ब्रेजिंग टॉर्च', 'डिजिटल क्लैम्प मीटर', 'लीक डिटेक्टर', 'हाई प्रेशर जेट पंप'],
     },
-    image: '/assets/aistudio/image_8b60c2a1.png',
+    image: '/assets/aistudio/image_5d22c7d3.png',
   },
   {
     id: 'refrigerator-deep-freezer',
@@ -590,7 +590,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'g1',
     title: { en: 'Live AC Gas Charging Lab', hi: 'लाइव एसी गैस चार्जिंग एवं वैक्यूमिंग लैब' },
     category: 'lab',
-    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/aistudio/image_5d22c7d3.png',
     description: { en: 'Students practicing manifold gauge vacuuming and R32 charging.', hi: 'छात्र मैनिफोल्ड गेज और वैक्यूम पंप से लाइव गैस चार्जिंग सीखते हुए।' },
   },
   {
